@@ -1,20 +1,12 @@
-<?php
-    $rootname = 'AdminLTE-3.0.5/';
+<?php session_start(); 
+    $rootname = 'miniproject/superadmin/';
     function url(){
         $protocol = isset($_SERVER["HTTPS"]) ? 'https://' : 'http://';
         $serverName = $_SERVER['SERVER_NAME'];
         return $rootURL = $protocol.$serverName;
     }
+    require($_SERVER['DOCUMENT_ROOT'].'/miniproject/superadmin/dbconnect.php');
 
-
-    function dynamicPages($urlname,$pagename){
-        if($urlname == 'home'){
-
-            require($pagename);
-        }
-    }
-
-
-    //rout('/dashboard','dashdoard.php');
-
+    // custom function page
+    require($_SERVER['DOCUMENT_ROOT'].'/miniproject/function/function.php');
 ?>
